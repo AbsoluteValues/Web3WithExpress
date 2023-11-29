@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Transaction</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+
+    <h1>Send Transaction</h1>
+    
+    <% if(typeof errs !== "undefined") { %>
+      <% errs.forEach((err)=>{%>
+          <h4 style="color: red;"><%=err.path%> : <%=err.msg%></h4>
+      <% }) %>
+    <% } %>
+
+    <form method="POST" action="/submit">
+      
+      <div class="write-from">
+        <h3>보내는 대상</h3>
+        <input type="text" placeholder="개인키 주소" name="from"/>
+      </div>
+
+      <div class="write-to">
+        <h3>받는 대상</h3>
+        <input type="text" placeholder="공개키 주소" name="to"/>
+      </div>
+
+      <div class="write-amount">
+        <h3>금액</h3>
+        <input type="text" placeholder="0.0001" name="amount"/>
+      </div>
+
+      <div class="write-repeat">
+        <h3>반복 횟수</h3>
+        <input type="text" placeholder="1" name="repeat"/>
+      </div>
+
+      <div class="btn">
+        <br/>
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화">
+      </div>
+
+    </form>
+  </body>
+</html>
