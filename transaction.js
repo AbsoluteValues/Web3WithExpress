@@ -54,7 +54,7 @@ async function sendTransactionsAPI(_from, _to, _amount, _repeat, _callback) {
             gas: limit, // 가스를 예상 가스 한도만큼 지정하기
             nonce: _nonce, // 이중 지불을 방지하기 위한 일종의 일련번호 설정하기(거래 전송시 1씩 증가, 계정에서 유일하며, 동일한 논스는 존재하지 않는다.)
             maxPriorityFeePerGas: web3.utils.toWei("3", "gwei"), // 이더리움 EIP-1559에서 사용되는 최대 우선 순위 수수료 설정하기
-            maxFeePerGas: web3.utils.toWei("3", "gwei"), // 이더리움 EIP-1559에서 사용되는 최대 가스당 최대 수수료 설정하기
+            maxFeePerGas: web3.utils.toWei("10", "gwei"), // 이더리움 EIP-1559에서 사용되는 최대 가스당 최대 수수료 설정하기
             chainId: 11155111, // 이더리움 네트워크의 체인 아이디 설정하기
             type: 0x2, // EIP-1559 트랙잭션 유형으로 설정하기
         };
